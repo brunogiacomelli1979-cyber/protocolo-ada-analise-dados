@@ -1,0 +1,52 @@
+# Dados e arquivos sensiveis
+dados/brutos/*
+dados/tratados/*
+dados/finais/*
+!dados/brutos/.gitkeep
+!dados/tratados/.gitkeep
+!dados/finais/.gitkeep
+
+# Area privada do agente
+agente_privado/
+
+# Arquivos do Power BI e exportacoes potencialmente sensiveis
+powerbi/*.pbix
+powerbi/*.pbit
+powerbi/*.xlsx
+powerbi/*.csv
+powerbi/*.parquet
+powerbi/*.json
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Arquivos temporarios e sistema
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+~$*
+.DS_Store
+Thumbs.db
+
+# Temporarios em relatorios
+relatorios/*.tmp
+relatorios/*.temp
+relatorios/~$*
+
+# Variaveis de ambiente e configuracoes locais
+.env
+.env.*
+!.env.example

@@ -1,0 +1,8 @@
+# Dependencias iniciais sugeridas para projetos de analise de dados.
+# Instale apenas quando o projeto exigir uso real.
+pandas
+numpy
+openpyxl
+pyarrow
+python-dotenv
+
