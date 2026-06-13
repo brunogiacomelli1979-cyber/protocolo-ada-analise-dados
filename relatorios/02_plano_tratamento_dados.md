@@ -371,6 +371,7 @@ A camada final da V1 usa um núcleo inicial para reduzir risco e complexidade, m
 
 ## 12. Decisão da Etapa 02
 
+<!-- INICIO_VALIDACAO_HUMANA -->
 Status da Etapa 02:
 
 * [ ] Aprovada
@@ -385,6 +386,7 @@ Observações da validação humana:
 * A abordagem preserva os dados brutos, separa campos sensíveis, diferencia métricas operacionais, campos financeiros, percentuais, taxas, IDs, datas, categorias e booleanos.
 * As ressalvas para a próxima etapa envolvem a confirmação do escopo final da V1, tratamento de dados pessoais/confidenciais, regras de nulos, escala de percentuais, agregação de médias/taxas/preços unitários e validação da granularidade do modelo.
 * A Etapa 03 só deve aplicar transformações aprovadas com base neste plano.
+<!-- FIM_VALIDACAO_HUMANA -->
 
 
 ## 13. Confirmações finais de segurança

@@ -277,6 +277,7 @@ Os tipos lidos pelo pandas são evidência técnica, não verdade definitiva de 
 
 ## 17. Decisão da Etapa 04
 
+<!-- INICIO_VALIDACAO_HUMANA -->
 Status da Etapa 04:
 
 * [ ] Aprovada
@@ -296,6 +297,7 @@ Observações da validação humana:
 * Os relacionamentos candidatos avaliados não apresentaram valores sem correspondência.
 * A única ressalva relevante envolve os nulos preservados em campos operacionais, especialmente `driver_id`, `truck_id` e `trailer_id`, que devem ter regra definida antes da criação dos dados finais.
 * A Etapa 05 pode avançar, desde que trate explicitamente as decisões sobre granularidade, fatos, dimensões, nulos, relacionamentos, percentuais/taxas, regras de agregação e criação da dimensão calendário.
+<!-- FIM_VALIDACAO_HUMANA -->
 
 
 ## 18. Confirmações finais

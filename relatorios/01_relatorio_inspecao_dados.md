@@ -1551,16 +1551,20 @@ As recomendações abaixo são hipóteses iniciais e dependem de validação hum
 - definir quais campos podem entrar em arquivos finais públicos;
 - aprovar qualquer transformação antes de sua execução.
 
-## Status da Etapa 01:
+## 15. Decisão da Etapa 01
+
+<!-- INICIO_VALIDACAO_HUMANA -->
+Status da Etapa 01:
 
 - [ ] Aprovada
 - [x] Aprovada com ressalvas
 - [ ] Reprovada para avanço
 
-## Observações da validação humana:
+Observações da validação humana:
 
 - A Etapa 01 está aprovada como inspeção segura e interpretação inicial dos dados brutos.
 - A abordagem híbrida Python + IA foi considerada adequada para gerar evidências técnicas e hipóteses interpretativas.
 - As classificações continuam sendo hipóteses e não decisões finais.
 - A Etapa 02 deve tratar com atenção especial datas/períodos, campos confidenciais, taxas percentuais versus taxas monetárias, campos que não devem ser somados diretamente, valores ausentes e granularidade das tabelas agregadas.
 - Nenhuma transformação deve ser aplicada sem validação humana.
+<!-- FIM_VALIDACAO_HUMANA -->

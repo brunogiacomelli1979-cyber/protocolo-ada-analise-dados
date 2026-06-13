@@ -23,6 +23,11 @@ import warnings
 
 import pandas as pd
 
+from ada_relatorios import (
+    escrever_relatorio_preservando_validacao,
+    montar_secao_validacao_humana,
+)
+
 
 PASTA_DADOS_BRUTOS = Path("dados/brutos")
 PASTA_RELATORIOS = Path("relatorios")
@@ -1242,13 +1247,15 @@ def gerar_relatorio() -> tuple[int, int]:
         "",
         validacao_humana(),
         "",
-        "## 15. Decisão da Etapa 01",
-        "",
-        decisao_etapa(),
+        montar_secao_validacao_humana("## 15. Decisão da Etapa 01", decisao_etapa()),
         "",
     ]
 
-    CAMINHO_RELATORIO.write_text("\n".join(partes), encoding="utf-8")
+    escrever_relatorio_preservando_validacao(
+        CAMINHO_RELATORIO,
+        "\n".join(partes),
+        "## 15. Decisão da Etapa 01",
+    )
     return len(tabelas), len(erros)
 
 

@@ -24,6 +24,11 @@ import unicodedata
 
 import pandas as pd
 
+from ada_relatorios import (
+    escrever_relatorio_preservando_validacao,
+    montar_secao_validacao_humana,
+)
+
 
 PASTA_DADOS_BRUTOS = Path("dados/brutos")
 PASTA_DADOS_TRATADOS = Path("dados/tratados")
@@ -474,9 +479,10 @@ def gerar_relatorio(metadados: list[dict[str, Any]], arquivos_gerados: list[str]
         "",
         "- Validar se datas foram convertidas corretamente.\n- Validar mascaramento.\n- Validar nulos preservados.\n- Validar escalas de taxas/percentuais.\n- Validar relacionamentos.\n- Validar se arquivos tratados estão prontos para geração de dados finais.",
         "",
-        "## 12. Decisão da Etapa 03",
-        "",
-        "Status da Etapa 03:\n\n- [ ] Aprovada\n- [ ] Aprovada com ressalvas\n- [ ] Reprovada para avanço\n\nObservações da validação humana:\n\n- A preencher.",
+        montar_secao_validacao_humana(
+            "## 12. Decisão da Etapa 03",
+            "Status da Etapa 03:\n\n- [ ] Aprovada\n- [ ] Aprovada com ressalvas\n- [ ] Reprovada para avanço\n\nObservações da validação humana:\n\n- A preencher.",
+        ),
         "",
         "## 13. Confirmações finais",
         "",
@@ -484,7 +490,11 @@ def gerar_relatorio(metadados: list[dict[str, Any]], arquivos_gerados: list[str]
         "",
     ]
 
-    RELATORIO_ETAPA_03.write_text("\n".join(partes), encoding="utf-8")
+    escrever_relatorio_preservando_validacao(
+        RELATORIO_ETAPA_03,
+        "\n".join(partes),
+        "## 12. Decisão da Etapa 03",
+    )
 
 
 def main() -> None:

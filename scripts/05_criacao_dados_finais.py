@@ -23,6 +23,11 @@ from pathlib import Path
 
 import pandas as pd
 
+from ada_relatorios import (
+    escrever_relatorio_preservando_validacao,
+    montar_secao_validacao_humana,
+)
+
 
 PASTA_RAIZ = Path(__file__).resolve().parents[1]
 PASTA_TRATADOS = PASTA_RAIZ / "dados" / "tratados"
@@ -702,17 +707,10 @@ def gerar_relatorio(
             "* definição dos visuais;",
             "* criação do dashboard.",
             "",
-            "## 14. Decisão da Etapa 05",
-            "",
-            "Status da Etapa 05:",
-            "",
-            "* [ ] Aprovada",
-            "* [ ] Aprovada com ressalvas",
-            "* [ ] Reprovada para avanço",
-            "",
-            "Observações da validação humana:",
-            "",
-            "* A preencher.",
+            montar_secao_validacao_humana(
+                "## 14. Decisão da Etapa 05",
+                "Status da Etapa 05:\n\n* [ ] Aprovada\n* [ ] Aprovada com ressalvas\n* [ ] Reprovada para avanço\n\nObservações da validação humana:\n\n* A preencher.",
+            ),
             "",
             "## 15. Confirmações finais",
             "",
@@ -725,7 +723,11 @@ def gerar_relatorio(
         ]
     )
 
-    RELATORIO_SAIDA.write_text("\n".join(linhas), encoding="utf-8")
+    escrever_relatorio_preservando_validacao(
+        RELATORIO_SAIDA,
+        "\n".join(linhas),
+        "## 14. Decisão da Etapa 05",
+    )
 
 
 def descricao_sensivel_dimensao(nome: str) -> str:

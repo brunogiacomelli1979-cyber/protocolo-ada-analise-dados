@@ -21,6 +21,11 @@ from typing import Any
 
 import pandas as pd
 
+from ada_relatorios import (
+    escrever_relatorio_preservando_validacao,
+    montar_secao_validacao_humana,
+)
+
 
 PASTA_DADOS_BRUTOS = Path("dados/brutos")
 PASTA_RELATORIOS = Path("relatorios")
@@ -755,9 +760,10 @@ def gerar_relatorio() -> tuple[int, int]:
         "",
         "- Escopo final da V1.\n- Tabelas que entram em `dados/tratados/`.\n- Tabelas que entram em `dados/finais/`.\n- Tratamento de campos pessoais e confidenciais.\n- Tratamento de nulos.\n- Escala de percentuais.\n- Regra de agregação para médias, taxas e preços unitários.\n- Relacionamento e granularidade no modelo.\n- Campos que serão removidos, mascarados ou mantidos.\n- Nomes finais das tabelas para Power BI.",
         "",
-        "## 12. Decisão da Etapa 02",
-        "",
-        "Status da Etapa 02:\n\n- [ ] Aprovada\n- [ ] Aprovada com ressalvas\n- [ ] Reprovada para avanço\n\nObservações da validação humana:\n\n- A preencher.",
+        montar_secao_validacao_humana(
+            "## 12. Decisão da Etapa 02",
+            "Status da Etapa 02:\n\n- [ ] Aprovada\n- [ ] Aprovada com ressalvas\n- [ ] Reprovada para avanço\n\nObservações da validação humana:\n\n- A preencher.",
+        ),
         "",
         "## 13. Confirmações finais de segurança",
         "",
@@ -768,7 +774,11 @@ def gerar_relatorio() -> tuple[int, int]:
     if erros:
         partes.extend(["## Erros de leitura", "", "\n".join(erros), ""])
 
-    RELATORIO_ETAPA_02.write_text("\n".join(partes), encoding="utf-8")
+    escrever_relatorio_preservando_validacao(
+        RELATORIO_ETAPA_02,
+        "\n".join(partes),
+        "## 12. Decisão da Etapa 02",
+    )
     return len(tabelas), len(erros)
 
 

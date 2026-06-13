@@ -133,6 +133,7 @@ Tabelas fora do escopo desta etapa:
 
 ## 12. Decisão da Etapa 03
 
+<!-- INICIO_VALIDACAO_HUMANA -->
 Status da Etapa 03:
 
 * [ ] Aprovada
@@ -150,6 +151,7 @@ Observações da validação humana:
 * Os nulos operacionais foram preservados para validação posterior.
 * As ressalvas para a próxima etapa envolvem validar tipos gravados nos arquivos tratados, consistência do mascaramento, formato das datas, relacionamentos entre tabelas tratadas, escala de taxas/percentuais e prontidão para geração de dados finais.
 * A próxima etapa só deve gerar dados finais após validação dos arquivos tratados.
+<!-- FIM_VALIDACAO_HUMANA -->
 
 
 ## 13. Confirmações finais

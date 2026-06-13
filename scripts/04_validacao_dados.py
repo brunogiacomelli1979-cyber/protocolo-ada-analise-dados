@@ -24,6 +24,11 @@ import unicodedata
 
 import pandas as pd
 
+from ada_relatorios import (
+    escrever_relatorio_preservando_validacao,
+    montar_secao_validacao_humana,
+)
+
 
 PASTA_DADOS_BRUTOS = Path("dados/brutos")
 PASTA_DADOS_TRATADOS = Path("dados/tratados")
@@ -607,9 +612,10 @@ def gerar_relatorio() -> tuple[int, dict[str, int]]:
         "",
         "- Relacionamentos aceitos.\n- Granularidade das tabelas finais.\n- Quais fatos e dimensões serão criados.\n- Tratamento de nulos.\n- Uso ou não de registros sem correspondência.\n- Regras de agregação.\n- Escala de percentuais.\n- Campos mascarados que seguem para dados finais.\n- Criação de dimensão calendário.",
         "",
-        "## 17. Decisão da Etapa 04",
-        "",
-        "Status da Etapa 04:\n\n- [ ] Aprovada\n- [ ] Aprovada com ressalvas\n- [ ] Reprovada para avanço\n\nObservações da validação humana:\n\n- A preencher.",
+        montar_secao_validacao_humana(
+            "## 17. Decisão da Etapa 04",
+            "Status da Etapa 04:\n\n- [ ] Aprovada\n- [ ] Aprovada com ressalvas\n- [ ] Reprovada para avanço\n\nObservações da validação humana:\n\n- A preencher.",
+        ),
         "",
         "## 18. Confirmações finais",
         "",
@@ -617,7 +623,11 @@ def gerar_relatorio() -> tuple[int, dict[str, int]]:
         "",
     ]
 
-    RELATORIO.write_text("\n".join(partes), encoding="utf-8")
+    escrever_relatorio_preservando_validacao(
+        RELATORIO,
+        "\n".join(partes),
+        "## 17. Decisão da Etapa 04",
+    )
     return len(arquivos_lidos), contagem_total
 
 
