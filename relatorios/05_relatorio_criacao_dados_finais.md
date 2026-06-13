@@ -209,7 +209,6 @@ Observações da validação humana:
 * Nenhum dashboard foi criado e nenhum KPI final complexo foi calculado nesta etapa.
 * As ressalvas para a próxima etapa envolvem a validação final dos dados finais, documentação dos KPIs, definição das medidas no Power BI, cuidado com nulos preservados e atenção para campos que não devem ser somados diretamente, como `average_mpg`, `price_per_gallon`, `base_rate_per_mile` e `fuel_surcharge_rate`.
 
-
 ## 15. Confirmações finais
 
 * dados brutos preservados;
