@@ -1,92 +1,212 @@
-# Protocolo ADA - Análise de Dados Assistida por IA
+# Protocolo ADA — Análise de Dados Assistida por IA
 
-Este projeto define a estrutura inicial do **Protocolo ADA**, um agente assistivo para apoiar projetos de análise de dados com Python e Power BI.
+## Descrição curta
 
-Neste momento, o projeto contém apenas pastas, documentos base e scripts iniciais. Ele não analisa dados, não transforma bases, não inventa métricas e não gera dashboards.
+O Protocolo ADA é uma metodologia reutilizável para projetos de análise de dados com apoio de ferramentas técnicas, IA e validação humana. O projeto organiza o ciclo de trabalho desde a inspeção inicial dos dados até a preparação para BI, com foco em rastreabilidade, governança, qualidade de dados e documentação.
+
+O estudo de caso atual usa dados logísticos para demonstrar o protocolo em um cenário prático de clientes, rotas, cargas, viagens, entregas, abastecimentos e preparação de modelo Power BI.
+
+## Princípio central
+
+* Python gera evidências.
+* IA interpreta hipóteses.
+* Humano valida decisões.
+
+A IA atua como apoio à análise, documentação e organização do raciocínio. Ela não é apresentada como decisora autônoma. Decisões sensíveis, interpretações finais, aprovação de tratamentos e validação de KPIs dependem de revisão humana.
 
 ## Objetivo do projeto
 
-Criar uma base organizada, simples e profissional para conduzir projetos de análise de dados com apoio de IA, mantendo controle humano sobre decisões sensíveis, preservando os dados brutos e documentando cada etapa relevante.
+O objetivo do projeto é documentar e demonstrar uma metodologia profissional para conduzir análises de dados de forma assistida, auditável e responsável.
 
-## O que é o Protocolo ADA
+O protocolo busca:
 
-O Protocolo ADA - Análise de Dados Assistida por IA - é uma metodologia de trabalho para orientar projetos de dados de forma assistida, auditável e segura.
+* preservar dados brutos;
+* separar dados brutos, tratados e finais;
+* gerar evidências técnicas com Python;
+* documentar decisões e limitações;
+* validar qualidade antes de avançar;
+* definir perguntas analíticas com base nos dados disponíveis;
+* preparar estrutura para modelagem dimensional e Power BI;
+* reforçar governança, privacidade e validação humana.
 
-O protocolo organiza o trabalho em etapas:
+## Contexto do estudo de caso
 
-- planejamento analítico;
-- avaliação de privacidade e risco;
-- inspeção e preparação dos dados;
-- definição validada de métricas;
-- análise;
-- visualização;
-- documentação;
-- revisão e melhoria contínua.
+O estudo de caso atual utiliza uma base logística. A análise foi orientada por base disponível: primeiro os dados foram inspecionados, tratados e validados; depois foram definidas as perguntas analíticas e os KPIs candidatos que a base permite responder com segurança.
 
-## Papel da IA
+Os dados finais foram organizados em tabelas de clientes, rotas, caminhões, cargas, viagens, eventos de entrega, abastecimentos e calendário. O objetivo não é apresentar uma conclusão operacional definitiva, mas demonstrar um fluxo metodológico completo e reutilizável.
 
-A IA atua como apoio para organizar raciocínios, sugerir caminhos, revisar documentação, identificar possíveis riscos e ajudar na estruturação do projeto.
+## Metodologia aplicada
 
-A IA não deve aplicar alterações críticas de forma autônoma. Antes de qualquer decisão sensível, o agente deve apresentar:
+O Protocolo ADA usa como referência principal a metodologia Google Data Analytics, adaptada para projetos orientados por base disponível:
 
-- problema identificado;
-- proposta de ação;
-- impacto esperado;
-- exemplo de antes e depois, quando aplicável;
-- pedido explícito de aprovação humana.
+Data Discovery → Prepare → Process → Ask → Analyze → Share → Act
 
-## Papel da validação humana
+No projeto:
 
-A validação humana é obrigatória para decisões sensíveis, incluindo:
+| Fase | Aplicação no Protocolo ADA |
+| --- | --- |
+| Data Discovery | Inspeção inicial dos dados, estrutura, riscos e entendimento da base. |
+| Prepare | Planejamento do tratamento, privacidade, padronização e critérios de qualidade. |
+| Process | Tratamento, padronização, validação e criação dos dados finais. |
+| Ask | Definição de perguntas analíticas e KPIs candidatos com base na evidência disponível. |
+| Analyze | Especificação de métricas, regras de agregação e medidas candidatas. |
+| Share | Preparação para construção de dashboard e comunicação em Power BI. |
+| Act | Validação humana, recomendações e próximos passos. |
 
-- exclusão ou alteração relevante de dados;
-- tratamento de valores ausentes ou inconsistentes;
-- definição de métricas e KPIs;
-- interpretação de resultados;
-- publicação de relatórios e dashboards;
-- qualquer decisão que possa afetar pessoas, áreas de negócio ou conformidade.
+## Estrutura do projeto
 
-## Papel do Python
+```text
+.
+├── dados/
+│   ├── brutos/
+│   ├── tratados/
+│   └── finais/
+├── documentos/
+├── imagens/
+├── powerbi/
+├── relatorios/
+├── scripts/
+├── requirements.txt
+└── README.md
+```
 
-O Python será usado para inspeção, tratamento, padronização, validação e preparação dos dados antes da etapa de visualização.
+Principais pastas:
 
-Os dados brutos devem ser preservados e nunca alterados diretamente. Qualquer base tratada deve ser gerada em pastas separadas, com documentação das transformações aplicadas.
+* `dados/brutos/`: dados originais preservados.
+* `dados/tratados/`: dados padronizados e tratados por scripts.
+* `dados/finais/`: tabelas finais preparadas para análise e BI.
+* `scripts/`: scripts Python usados para inspeção, tratamento, validação e criação dos dados finais.
+* `relatorios/`: relatórios técnicos e analíticos gerados ao longo das etapas.
+* `documentos/`: documentação metodológica, boas práticas e evolução do protocolo.
+* `powerbi/`: espaço reservado para artefatos relacionados ao Power BI.
 
-## Papel do Power BI
+## Etapas concluídas
 
-O Power BI será usado apenas para visualização, storytelling e análise interativa.
+| etapa | nome | entrega principal |
+| --- | --- | --- |
+| 01 | Inspeção de dados | Relatório inicial de estrutura, colunas, tipos, riscos e observações. |
+| 02 | Plano de tratamento | Plano documentado para tratamento, padronização e governança. |
+| 03 | Tratamento e padronização | Dados tratados e relatório das transformações aplicadas. |
+| 04 | Validação dos dados tratados | Validação técnica dos dados tratados antes da criação dos finais. |
+| 05 | Criação dos dados finais | Tabelas finais organizadas para análise e Power BI. |
+| 06 | Validação dos dados finais | Validação de arquivos finais, chaves, relacionamentos, calendário e riscos de agregação. |
+| 07 | Definição de perguntas analíticas e KPIs | Perguntas, métricas e KPIs candidatos com limitações documentadas. |
+| 08 | Especificação do modelo Power BI | Modelo recomendado, relacionamentos, medidas DAX candidatas e páginas sugeridas. |
 
-O tratamento principal dos dados deve acontecer antes do Power BI, preferencialmente em Python, para manter rastreabilidade, reprodutibilidade e melhor controle de qualidade.
+## Documentação principal
 
-## Relatórios
+Documentos metodológicos finais:
 
-Relatórios gerados por scripts devem ficar na pasta `relatorios/`. Essa pasta é versionável para manter a estrutura do projeto, mas arquivos temporários ou de trabalho devem continuar fora do versionamento.
+* `documentos/protocolo_ada_metodologia.md`
+* `documentos/fluxo_operacional_ada.md`
+* `documentos/checklist_qualidade_ada.md`
+* `documentos/boas_praticas_ada.md`
+* `documentos/evolucao_futura_ada.md`
 
-## Documentação pública do agente
+Relatórios principais do estudo de caso:
 
-O documento `documentos/visao_geral_agente_ada.md` apresenta uma visão geral pública do Agente ADA, sem revelar prompts internos, regras privadas ou templates sensíveis.
+* `relatorios/01_relatorio_inspecao_dados.md`
+* `relatorios/02_plano_tratamento_dados.md`
+* `relatorios/03_relatorio_tratamento_padronizacao.md`
+* `relatorios/04_relatorio_validacao_dados_tratados.md`
+* `relatorios/05_relatorio_criacao_dados_finais.md`
+* `relatorios/06_relatorio_validacao_dados_finais.md`
+* `relatorios/07_definicao_perguntas_kpis.md`
+* `relatorios/08_especificacao_modelo_powerbi.md`
 
-## Privacidade e LGPD
+## Boas práticas aplicadas
 
-O projeto deve respeitar princípios de privacidade, minimização de dados e conformidade com a LGPD.
+* Preservação dos dados brutos.
+* Separação entre dados brutos, tratados e finais.
+* Uso de scripts Python para reprodutibilidade.
+* Documentação de decisões e limitações.
+* Validação humana entre etapas.
+* Campos sensíveis removidos ou mascarados quando necessário.
+* Nulos operacionais preservados e documentados.
+* Outliers e valores incomuns não removidos automaticamente.
+* Métricas e KPIs derivados apenas de campos existentes.
+* Diferenciação entre métrica, KPI e dimensão de análise.
+* Alerta para campos não aditivos, como médias, taxas e preços unitários.
+* Preparação para modelo estrela no Power BI.
+* Uso de tabela calendário.
+* Recomendação de medidas explícitas em vez de agregações automáticas.
 
-Dados sensíveis, dados pessoais, arquivos brutos, instruções privadas do agente e materiais internos não devem ser publicados em repositórios públicos.
+## Status atual
 
-## Público e privado
+As Etapas 01 a 08 foram concluídas.
 
-Conteúdo público esperado:
+O projeto possui:
 
-- estrutura do projeto;
-- documentos metodológicos sem dados sensíveis;
-- scripts base sem informações confidenciais;
-- relatórios públicos aprovados, quando não contiverem dados sensíveis;
-- exemplos anonimizados, quando existirem e forem aprovados.
+* dados tratados e finais organizados;
+* relatórios técnicos e analíticos;
+* documentação metodológica do Protocolo ADA;
+* especificação para construção manual do modelo Power BI;
+* medidas DAX candidatas documentadas;
+* limitações e riscos registrados.
 
-Conteúdo privado:
+O dashboard Power BI ainda não foi construído neste repositório.
 
-- dados brutos;
-- dados tratados ou finais com informações sensíveis;
-- prompts internos;
-- regras detalhadas de decisão;
-- templates sensíveis do agente;
-- arquivos Power BI com dados reais, quando aplicável.
+## Próximos passos
+
+* Construção manual do dashboard Power BI.
+* Validação do modelo no Power BI.
+* Documentação das medidas implementadas.
+* Revisão visual e narrativa do dashboard.
+* Validação humana dos resultados apresentados.
+* Possível evolução futura para agente assistivo especializado no Protocolo ADA.
+
+## Tecnologias e conceitos utilizados
+
+* Python
+* Pandas
+* Markdown
+* Git/GitHub
+* Power BI
+* ETL
+* Qualidade de dados
+* Modelagem dimensional
+* Governança de dados
+* Validação humana
+
+## Limitações
+
+Este projeto não promete automação completa da análise de dados. O Protocolo ADA organiza o fluxo, gera evidências e apoia decisões, mas não substitui validação humana nem conhecimento de negócio.
+
+Limitações importantes:
+
+* KPIs sem meta são métricas candidatas, não KPIs oficiais.
+* Relações observadas nos dados não provam causalidade.
+* Nulos operacionais não devem ser tratados automaticamente como erro.
+* Campos como médias, taxas e preços unitários exigem regras de agregação específicas.
+* Não há garantia de que a base disponível responda a todas as perguntas de negócio.
+* O estudo de caso logístico demonstra a metodologia, mas não representa uma solução universal pronta para qualquer domínio sem adaptação.
+
+## Como reproduzir o fluxo de alto nível
+
+1. Organizar os dados nas pastas do projeto.
+2. Executar a inspeção inicial dos dados.
+3. Criar e revisar o plano de tratamento.
+4. Executar tratamento e padronização com Python.
+5. Validar os dados tratados.
+6. Criar os dados finais para análise.
+7. Validar os dados finais.
+8. Definir perguntas analíticas e KPIs candidatos.
+9. Especificar modelo Power BI e medidas.
+10. Validar decisões humanas antes de construir ou publicar o dashboard.
+
+Os scripts em `scripts/` e os relatórios em `relatorios/` documentam a execução aplicada ao estudo de caso atual.
+
+## Privacidade e dados sensíveis
+
+O projeto considera privacidade e governança como partes do fluxo de análise.
+
+Diretrizes adotadas:
+
+* dados brutos devem ser preservados e protegidos;
+* dados sensíveis não devem ser expostos sem necessidade;
+* campos sensíveis devem ser removidos, mascarados ou documentados;
+* prompts privados, regras internas sensíveis e materiais confidenciais não devem ser publicados;
+* decisões sobre privacidade devem passar por validação humana;
+* arquivos privados ou sensíveis devem ser protegidos por `.gitignore` quando aplicável.
+
+O Protocolo ADA trata IA como apoio metodológico e técnico. A responsabilidade por decisões, publicação e uso dos resultados permanece humana.
