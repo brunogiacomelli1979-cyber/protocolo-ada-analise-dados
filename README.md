@@ -133,7 +133,9 @@ Relatórios principais do estudo de caso:
 
 ## Status atual
 
-As Etapas 01 a 08 foram concluídas.
+O Protocolo ADA v1.0 está concluído como metodologia documentada e aplicada ao estudo de caso logístico até a etapa de especificação do modelo Power BI.
+
+As Etapas 01 a 08 foram concluídas:
 
 O projeto possui:
 
@@ -144,15 +146,15 @@ O projeto possui:
 * medidas DAX candidatas documentadas;
 * limitações e riscos registrados.
 
-O dashboard Power BI ainda não foi construído neste repositório.
+O dashboard Power BI ainda não foi construído. Ele faz parte da próxima fase do estudo de caso aplicado, não da conclusão metodológica da v1.0.
 
 ## Próximos passos
 
-* Construção manual do dashboard Power BI.
-* Validação do modelo no Power BI.
-* Documentação das medidas implementadas.
+* Construção manual do dashboard Power BI para o estudo de caso logístico.
+* Validação do modelo no Power BI com base na especificação da Etapa 08.
+* Documentação das medidas efetivamente implementadas.
 * Revisão visual e narrativa do dashboard.
-* Validação humana dos resultados apresentados.
+* Validação humana dos resultados apresentados antes de qualquer publicação.
 * Possível evolução futura para agente assistivo especializado no Protocolo ADA.
 
 ## Tecnologias e conceitos utilizados
